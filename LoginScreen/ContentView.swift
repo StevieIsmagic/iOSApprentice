@@ -14,6 +14,7 @@ struct ContentView: View {
     
     // User interface views
     @State var alertIsVisible: Bool = false
+    @State var sliderValue: Double = 50.0
     
     // User interface content and layout
     var body: some View {
@@ -22,8 +23,8 @@ struct ContentView: View {
             
             // Target row
             HStack {
-                Text("How you feelin today ?")
-                Text("one hunnerd")
+                Text("How are you feeling today ?")
+                Text("one hunnerd ?")
             }
             
             Spacer()
@@ -32,8 +33,7 @@ struct ContentView: View {
             // Added views for the slider row here
             HStack {
                 Text("1")
-                Slider(value: /*@START_MENU_TOKEN@*/.constant(10)
-/*@END_MENU_TOKEN@*/)
+                Slider(value: self.$sliderValue, in: 1...100/*@END_MENU_TOKEN@*/)
                 Text("100")
             }
             
@@ -71,6 +71,7 @@ struct ContentView: View {
                     Text("Info")
                 }
             }
+            .padding(.bottom, 20)
         }
         
     }
