@@ -24,7 +24,7 @@ struct ContentView: View {
             // Target row
             HStack {
                 Text("How are you feeling today ?")
-                Text("one hunnerd ?")
+                Text("one hunnerd thousand?")
             }
             
             Spacer()
