@@ -49,7 +49,7 @@ struct ContentView: View {
             }
             .alert(isPresented: self.$alertIsVisible) {
                 Alert(title: Text("Hello there !"),
-                      message: Text("The slider's current value is \(Int(self.sliderValue))."),
+                      message: Text("The slider's current value is \(Int(self.sliderValue)).\n" + "The target value is \(self.target).\n" + "You scored \(self.pointsForCurrentRound()) points this round."),
                       dismissButton: .default(Text("Awesome!")))
             }
             
