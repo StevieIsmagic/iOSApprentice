@@ -15,6 +15,7 @@ struct ContentView: View {
     // User interface views
     @State var alertIsVisible: Bool = false
     @State var sliderValue: Double = 50.0
+    @State var target: Int = Int.random(in: 1...100)
     
     // User interface content and layout
     var body: some View {
@@ -23,8 +24,8 @@ struct ContentView: View {
             
             // Target row
             HStack {
-                Text("How are you feeling today ?")
-                Text("one hunnerd thousand?")
+                Text("Put the bullseye as close as you can to target:")
+                Text("\(self.target)")
             }
             
             Spacer()
@@ -48,7 +49,7 @@ struct ContentView: View {
             }
             .alert(isPresented: self.$alertIsVisible) {
                 Alert(title: Text("Hello there !"),
-                      message: Text("The slider's current value is \(self.sliderValue)."),
+                      message: Text("The slider's current value is \(Int(self.sliderValue))."),
                       dismissButton: .default(Text("Awesome!")))
             }
             
